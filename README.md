@@ -7,7 +7,7 @@ Source: Information available in the international Monetary fund (IMF), from Int
 Method of extraction: API Extraction from IFS branch Dataset
 Format: The API returned JSONs that had to be parsed.
 Data: Unemployment (thous. people), Employment (thous. people), Population (thos.people)
-Functions and methodology provided in JupyterNotebook may allow to exctract any other Index from the IFS Dataset for all the member countries.
+Functions and methodology provided in JupyterNotebook may allow to extract any other Index from the IFS Dataset for all the member countries.
 
 #### LOAD
 ---
@@ -16,6 +16,7 @@ PostgreSQL was choosen as our main data repository, mainly because the data that
 however data may also be loaded in Mongdb with slight changes in our current code.
 Different tables are created for every index that was choosen to be extracted, mainly to keep them organized.
 
+It is important to note that the IMF site only allows 10 requests per second, therefore we had to include in the calling function a parameter that only allows a certain number of requests per a certain time. 
 
 #### TRANSFORMATION
 ---
